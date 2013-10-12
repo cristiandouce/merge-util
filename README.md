@@ -28,9 +28,9 @@ console.log(obj1); // out: "{ hello: 'World!', good: { bye: 'Lennin'}}"
   Merge `obj2` into `obj1`.
 
 ````javascript
-  var obj1 = { arr: ['1', 2, { three: '12' }], obj: { something: 'Good!' }};
+  var obj1 = { obj: { any: 'thing' }};
   var obj2 = { obj: { something: 'wrong?' } };
-  merge(obj1, obj2); // out: "{ arr: ['1', 2, { three: '12' }], obj: { something: 'Wrong?' }}"
+  merge(obj1, obj2); // out: "{ obj: { something: 'Wrong?', any: 'thing' }}"
 ````
 
 ## TODO
