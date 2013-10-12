@@ -1,0 +1,18 @@
+{
+  "name": "merge-util",
+  "description": "Deep merge object utility",
+  "keywords": [
+    "merge",
+    "object",
+    "deep",
+    "component",
+    "util"
+  ],
+  "dependencies": {
+    "component/type": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "main": "index.js"
+}
