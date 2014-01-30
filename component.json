@@ -9,7 +9,7 @@
     "util"
   ],
   "dependencies": {
-    "component/type": "*"
+    "component/type": "c817c"
   },
   "scripts": [
     "index.js"
