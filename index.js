@@ -27,7 +27,10 @@ module.exports = merge;
  */
 
 function merge (a, b, opts){
-  opts = opts || { inheritance: false , shallow: false }
+  opts = (Boolean == typeof(opts))
+    ? { inheritance: opts }
+    : opts || { inheritance: false , shallow: false }
+
 
   for (var key in b) {
     var copy = !!opts.inheritance
