@@ -98,7 +98,7 @@ merge(megaman, zero, { shallow: true });
 
 log(xBuster);
 //out: { name: "X-Buster", power: 600 }
-// `megaman`'s' `weapon` property was swapped for `zero`'s, but `xBuster` itself wasn't merged.
+// `megaman`'s' `weapon` was swapped for `zero`'s, but `xBuster` itself wasn't merged.
 ```
 
 ## TODO
