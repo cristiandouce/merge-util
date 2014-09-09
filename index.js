@@ -21,21 +21,26 @@ module.exports = merge;
  *
  * @param {Object} a
  * @param {Object} b
- * @param {Boolean} inheritance
+ * @param {Object} opts
  * @return {Object} a
  * @api public
  */
 
-function merge (a, b, inheritance){
+function merge (a, b, opts){
+  opts = (Boolean == typeof(opts))
+    ? { inheritance: opts }
+    : opts || { inheritance: false , shallow: false }
+
+
   for (var key in b) {
-    var copy = !!inheritance
+    var copy = !!opts.inheritance
      ? b[key] != null
      : (has.call(b, key)) && b[key] != null
 
     if (copy) {
       if (!a) a = {};
-      if ('object' === type(b[key])) {
-        a[key] = merge(a[key], b[key], inheritance);
+      if (!opts.shallow && 'object' === type(b[key])) {
+        a[key] = merge(a[key], b[key], opts);
       } else {
         a[key] = b[key];
       }
