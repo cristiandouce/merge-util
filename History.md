@@ -3,7 +3,7 @@
 ==================
 
  * Update `README.md` with options description
- * Add opts parameter and shallow merge option
+ * Change `inheritance` parameter to `opts` for optional shallow merging while maintaining compatibility with 0.1.0
 
 0.1.0 / 2014-01-30
 ==================

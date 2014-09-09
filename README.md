@@ -40,6 +40,7 @@ Available options include:
 
 * `shallow` : *Defaults to* `false`. A `true` value prevents merge from being recursive to nested objects.
 
+_Note:_ you can also pass a `Boolean` as the `opts` parameter as value for `inheritance` alone. This provides backwards compatibility with version `0.1.0`
 
 ## TODO
   * Add some tests.
