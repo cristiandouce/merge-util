@@ -1,6 +1,6 @@
 {
   "name": "merge-util",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Deep merge object utility",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,5 @@
   },
   "dependencies": {
     "type-component": "0.0.1"
-  },
-  "main": "index.js"
+  }
 }
