@@ -10,7 +10,8 @@
     "util"
   ],
   "dependencies": {
-    "component/type": "c817c"
+    "component/type": "c817c",
+    "ianstormtaylor/is-empty": "0.0.1"
   },
   "scripts": [
     "index.js"

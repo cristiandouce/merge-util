@@ -23,6 +23,7 @@
     "url": "https://github.com/cristiandouce/merge-util/issues"
   },
   "dependencies": {
-    "type-component": "0.0.1"
+    "type-component": "0.0.1",
+    "is-empty": "0.0.1"
   }
 }
