@@ -1,4 +1,10 @@
 
+0.3.0 / 2015-01-23
+==================
+
+ * Made empty discarding optional and updated `README.md` with usage documentation
+ * Prevent attributes with `{ }`, `undefined`, `null` or `0` as values to be lost in the merge
+
 0.2.0 / 2014-09-09
 ==================
 
