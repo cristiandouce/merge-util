@@ -40,6 +40,8 @@ Available options include:
 
 * `shallow` : *Defaults to* `false`. A `true` value prevents merge from being recursive to nested objects.
 
+* `discardEmpty` : *Defaults to* `true`. A `false` value makes empty values (as defined by [`ianstormtaylor/is-empty`](https://github.com/ianstormtaylor/is-empty)) in the "right-hand" be preserved as they were instead of being merged as `undefined` attributes in the "left-hand" object.
+
 _Note:_ you can also pass a `Boolean` as the `opts` parameter as value for `inheritance` alone. This provides backwards compatibility with version `0.1.0`
 
 #### inheritance
@@ -85,7 +87,7 @@ var zero = {
 }
 
 
-merge(megaman, zero); // same as merge(dog, kid, { shallow: false });
+merge(megaman, zero); // same as merge(megaman, zero, { shallow: false });
 //out => megaman: "{ name: "Zero", weapon: { name: "Zero Blade", power: 9001 } }"
 
 log(xBuster);
@@ -99,6 +101,49 @@ merge(megaman, zero, { shallow: true });
 log(xBuster);
 //out: { name: "X-Buster", power: 600 }
 // `megaman`'s' `weapon` was swapped for `zero`'s, but `xBuster` itself wasn't merged.
+```
+
+#### discardEmpty
+
+```javascript
+var lameArmor = { name: "Lame armor", defense: 10 };
+var upgradableArmor = { name: "Cool armor", defense: 20, upgrades: { } }
+
+var noob = {
+  name: "Noob player",
+  armor: lameArmor
+}
+
+var veteran = {
+  name: "Looking for upgrades"
+  armor: upgradableArmor
+}
+
+
+merge(noob, veteran); // same as merge(noob, veteran, { discardEmpty: true });
+//out =>
+//noob:
+//  { name: "Looking for uprades",
+//    weapon: {
+//      name: "Cool armor",
+//      defense: 20,
+//      upgrades: undefined
+//    }
+//  }
+// `upgrades` attribute was discarded because it was an empty object.
+
+merge(noob, veteran, { discardEmpty: false });
+//out =>
+//noob:
+//  { name: "Looking for uprades",
+//    weapon: {
+//      name: "Cool armor",
+//      defense: 20,
+//      upgrades: { }
+//    }
+//  }
+// `upgrades` attribute was merged as an empty object.
+
 ```
 
 ## TODO
