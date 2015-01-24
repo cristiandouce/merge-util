@@ -41,7 +41,7 @@ function merge (a, b, opts){
     if (copy) {
       if (!a) a = {};
       if (!opts.shallow && 'object' === type(b[key])) {
-        if (!opts.discardEmpty && isEmpty(a[key] && isEmpty(b[key]))) {
+        if (!opts.discardEmpty && isEmpty(a[key]) && isEmpty(b[key])) {
           // Preserve { }, null, undefined, 0 as they were
           a[key] = b[key];
         } else {
