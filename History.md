@@ -1,4 +1,9 @@
 
+0.3.1 / 2015-01-23
+==================
+
+ * Fixed a bug where left-hand 'object' attribute were overwritten by empty values from right-hand objects
+
 0.3.0 / 2015-01-23
 ==================
 
